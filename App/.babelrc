@@ -1,0 +1,9 @@
+{
+  sourceRoot: "./src",
+  "presets": [
+    "env",
+    "react",
+    "es2015",
+    "ui5"
+  ]
+}

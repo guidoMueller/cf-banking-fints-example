@@ -1,0 +1,74 @@
+{
+  "statements": [
+    {
+      "transactions": [
+        {
+          "id": "cfbd81870d9e6b52b23ddf9d6eb0dc65",
+          "code": "NMSC",
+          "fundsCode": "",
+          "isCredit": true,
+          "isExpense": true,
+          "currency": "EUR",
+          "description": "166?20EREF+000000009802?21SVWZ+RINP Dauerauftrag Spar?22en Haus?30NORSDE71XXX?31DE73760260000790878300?32Guido Mueller",
+          "amount": 100,
+          "valueDate": "2019-01-31",
+          "entryDate": "",
+          "customerReference": "",
+          "bankReference": "",
+          "descriptionStructured": {
+            "reference": {
+              "raw": "EREF+000000009802SVWZ+RINP Dauerauftrag Sparen Haus",
+              "endToEndRef": "000000009802",
+              "text": "RINP Dauerauftrag Sparen Haus"
+            },
+            "name": "Guido Mueller",
+            "iban": "DE73760260000790878300",
+            "bic": "NORSDE71XXX"
+          }
+        }
+      ],
+      "referenceNumber": "DEUTDEFFXXXX",
+      "accountId": "76026000/790878310",
+      "openingBalance": {
+        "isCredit": true,
+        "date": "2019-01-31",
+        "currency": "EUR",
+        "value": 1.7
+      },
+      "number": "00000",
+      "closingBalance": {
+        "isCredit": true,
+        "date": "2019-01-31",
+        "currency": "EUR",
+        "value": 351.7
+      }
+    }
+  ],
+  "transactions": [
+    {
+      "id": "cfbd81870d9e6b52b23ddf9d6eb0dc65",
+      "code": "NMSC",
+      "fundsCode": "",
+      "isCredit": true,
+      "isExpense": true,
+      "currency": "EUR",
+      "description": "166?20EREF+000000009802?21SVWZ+RINP Dauerauftrag Spar?22en Haus?30NORSDE71XXX?31DE73760260000790878300?32Guido Mueller",
+      "amount": 100,
+      "valueDate": "2019-01-31",
+      "entryDate": "",
+      "customerReference": "",
+      "bankReference": "",
+      "descriptionStructured": {
+        "reference": {
+          "raw": "EREF+000000009802SVWZ+RINP Dauerauftrag Sparen Haus",
+          "endToEndRef": "000000009802",
+          "text": "RINP Dauerauftrag Sparen Haus"
+        },
+        "name": "Guido Mueller",
+        "iban": "DE73760260000790878300",
+        "bic": "NORSDE71XXX"
+      }
+    }
+
+  ]
+}

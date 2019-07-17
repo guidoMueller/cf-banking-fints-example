@@ -1,0 +1,143 @@
+{
+	"_version": "1.3.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.uniorg.cf.banking.example",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"rootView": {
+			"viewName": "com.uniorg.cf.banking.example.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"handleValidation": true,
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.40",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.40.0"
+				},
+				"sap.m": {
+					"minVersion": "1.40.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.40.0"
+				}
+			}
+		},
+		"models": {			
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.uniorg.cf.banking.example.i18n.i18n"
+				}
+			}
+		},     
+		"resources":{ 
+            "css": [{
+                "uri": "css/style.css"
+            }]
+        },		   
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.uniorg.cf.banking.example.view",
+				"controlId": "navContainer",
+				"controlAggregation": "pages",
+				"transition": "show"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "start",
+					"target": [
+						"accounts"
+					]
+				},
+				{
+					"pattern": "Banks",
+					"name": "banks",
+					"target": [
+						"banks"
+					]
+				},
+				{
+					"pattern": "Accounts",
+					"name": "accounts",
+					"target": [
+						"accounts"
+					]
+				},
+				{
+					"pattern": "AccountSales",
+					"name": "accountSales",
+					"target": [
+						"accountSales"
+					]
+				},
+				{
+					"pattern": "AccountSales/{iban}",
+					"name": "accountSalesIban",
+					"target": [
+						"accountSales"
+					]
+				},
+				{
+					"pattern": "AccountSalesChart",
+					"name": "accountSalesChart",
+					"target": [
+						"accountSalesChart"
+					]
+				}
+			],
+			"targets": {
+				"banks": {
+					"viewName": "account.Banks",
+					"viewLevel": 1,
+					"viewId": "banks"
+				},
+				"accounts": {
+					"viewName": "account.Accounts",
+					"viewLevel": 1,
+					"viewId": "accounts"
+				},
+				"accountSales": {
+					"viewName": "accountSales.AccountSales",
+					"viewLevel": 1,
+					"viewId": "accountSales"
+				},
+				"accountSalesChart": {
+					"viewName": "accountSales.AccountSalesChart",
+					"viewLevel": 1,
+					"viewId": "accountSalesChart"
+				}
+			}
+		}		
+	}
+}

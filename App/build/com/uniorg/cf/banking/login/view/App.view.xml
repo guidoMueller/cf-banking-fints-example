@@ -1,0 +1,15 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:tnt="sap.tnt"
+	xmlns:core="sap.ui.core" 
+	height="100%"
+	displayBlock="true" 
+	controllerName="com.uniorg.cf.banking.login.controller.App">
+	<App>
+		<pages>
+			<NavContainer id="navContainer">
+			</NavContainer>
+		</pages>
+	</App>
+</mvc:View>

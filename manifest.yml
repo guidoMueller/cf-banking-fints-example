@@ -1,0 +1,9 @@
+---
+applications:
+- name: cf-banking-fints-example
+  memory: 192M
+  instances: 1
+  random-route: false
+  host: cf-banking-fints-example
+  services:
+  - mongodb-service

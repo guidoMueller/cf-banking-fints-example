@@ -1,0 +1,34 @@
+[
+  {
+    "iban": "DE73760260000790878300",
+    "bic": "NORSDE71XXX",
+    "accountNumber": "790878300",
+    "subAccount": "EUR",
+    "blz": "76026000",
+    "statementsIsSet": false,
+    "statements": {
+      "transactions": [],
+      "referenceNumber": "DEUTDEFFXXXX",
+      "accountId": "76026000/790878300",
+      "openingBalance": {
+        "isCredit": true,
+        "date": "2019-06-14",
+        "currency": "EUR",
+        "value": 42.36
+      },
+      "number": "00000",
+      "closingBalance": {
+        "isCredit": true,
+        "date": "2019-06-14",
+        "currency": "EUR",
+        "value": 42.36
+      },
+      "closingAvailableBalance": {
+        "isCredit": true,
+        "date": "2019-06-14",
+        "currency": "EUR",
+        "value": 42.36
+      }
+    }
+  }
+]

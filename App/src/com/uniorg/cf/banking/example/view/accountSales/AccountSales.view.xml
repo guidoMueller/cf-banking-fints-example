@@ -1,0 +1,115 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        controllerName="com.uniorg.cf.banking.example.controller.accountSales.AccountSales">
+
+    <Page showHeader="false">
+        <content>
+
+
+            <Table id="accountSalesTable" items="{ path: '/transactions' }" class="tableStyle">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>accountSalesTitle}" width="15%"/>
+                        <Title text="({=${/transactions}.length})" width="40px"/>
+                        <MenuButton text="{i18n>accountsTitle}">
+                            <menu>
+                                <Menu items="{ path: 'accounts>/' }" id="accountMenu">
+                                    <MenuItem text="{accounts>accountNumber}" key="{accounts>iban}" press="selectAccount"/>
+                                </Menu>
+                            </menu>
+                        </MenuButton>
+                        <Button text="{i18n>allSales}" press="filterTableViewAll">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                            </layoutData>
+                        </Button>
+                        <Button text="{i18n>entrySales}" press="filterTableViewIn">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                            </layoutData>
+                        </Button>
+                        <Button text="{i18n>outSales}" press="filterTableViewOut">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                            </layoutData>
+                        </Button>
+                        <DateRangeSelection
+                                id="DRS2"
+                                dateValue="{path:'dateSelect>/dateValueDRS2'}"
+                                secondDateValue="{path:'dateSelect>/secondDateValueDRS2'}"
+                                minDate="{path:'dateSelect>/dateMinDRS2'}"
+                                maxDate="{path:'dateSelect>/dateMaxDRS2'}"
+                                change="handleDateSelectChange"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="{i18n>valueDate}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="valueDate" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>amountIn}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="amountIn" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>amountOut}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="amountOut" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>bic}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="descriptionStructured/bic" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>iban}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="descriptionStructured/iban" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>sender}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="descriptionStructured/name" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>referenceText}" class="columnLabelStyle"/>
+                        <customData>
+                            <core:CustomData key="sort" value="descriptionStructured/reference/text" writeToDom="true"/>
+                        </customData>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{
+						path: 'valueDate',
+						formatter: '.formatter.dateMapper'}"/>
+                            <Text text="{
+						parts: [ 'amount', 'currency', 'isCredit', 'isExpense' ],
+						formatter: '.formatter.amountIn'}"/>
+                            <Text text="{
+						parts: [ 'amount', 'currency', 'isCredit', 'isExpense' ],
+						formatter: '.formatter.amountOut'}"/>
+                            <Text text="{descriptionStructured/bic}"/>
+                            <Text text="{descriptionStructured/iban}"/>
+                            <Text text="{descriptionStructured/name}"/>
+                            <Text text="{descriptionStructured/reference/text}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+
+</mvc:View>

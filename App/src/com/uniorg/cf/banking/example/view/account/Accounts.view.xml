@@ -1,0 +1,26 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="com.uniorg.cf.banking.example.controller.account.Accounts">
+
+    <Page showHeader="false">
+        <content>
+            <TileContainer
+                    id="container"
+                    tileDelete="handleTileDelete"
+                    tiles="{/}">
+                <StandardTile
+                        type="type"
+                        icon="sap-icon://money-bills"
+                        number="{
+						parts: [ 'statements/closingBalance/value', 'statements/closingBalance/isCredit' ],
+						formatter: '.formatter.getSaldo'}"
+                        numberUnit="{statements/closingBalance/currency}"
+                        title="{accountName}   {accountNumber}"
+                        info="{bic}"
+                        press="onPressAccount" />
+            </TileContainer>
+        </content>
+    </Page>
+
+</mvc:View>

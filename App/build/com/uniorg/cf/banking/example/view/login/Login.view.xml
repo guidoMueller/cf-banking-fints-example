@@ -1,0 +1,54 @@
+<mvc:View
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="com.uniorg.cf.banking.example.controller.login.Login">
+    <l:VerticalLayout
+            class="sapUiContentPadding"
+            width="100%">
+        <l:content>
+
+            <Label text="Login" labelFor="inputText"/>
+            <Input
+                    id="inputUsername"
+                    type="Text"
+                    binding="{formModel>/}"
+                    value="{formModel>user}"
+                    class="sapUiSmallMarginBottom"
+                    placeholder="Enter name ... (Filiale + Kontonummer oder Kontonummer)" />
+
+            <Label text="Bank" labelFor="inputBlz"/>
+            <Input
+                    id="inputBlz"
+                    type="Text"
+                    placeholder="Enter Bank ..."
+                    binding="{formModel>/}"
+                    value="{formModel>blz}"
+                    showSuggestion="true"
+                    suggest="handleSuggest"
+                    suggestionItems="{ path: '/' }" >
+                <suggestionItems key="{blz}">
+                    <core:Item key="{blz}" text="{name} - {blz} - {location}" />
+                </suggestionItems>
+            </Input>
+
+            <Label text="Password" labelFor="inputUrl"/>
+            <Input
+                    id="inputPassword"
+                    type="Password"
+                    binding="{formModel>/}"
+                    value="{formModel>pass}"
+                    class="sapUiSmallMarginBottom"
+                    placeholder="Enter password ..." />
+
+            <Button text="Login"
+                    press="onLogin"
+                    ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+                <layoutData>
+                    <FlexItemData growFactor="1" />
+                </layoutData>
+            </Button>
+        </l:content>
+    </l:VerticalLayout>
+</mvc:View>

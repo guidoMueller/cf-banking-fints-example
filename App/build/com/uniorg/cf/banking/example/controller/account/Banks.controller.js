@@ -1,0 +1,17 @@
+"use strict";
+
+sap.ui.define("com/uniorg/cf/banking/example/controller/account/Banks.controller", ["sap/ui/model/json/JSONModel", "com/uniorg/cf/banking/example/controller/BaseController"], function (JSONModel, BaseController) {
+	"use strict";
+
+	return BaseController.extend("com.uniorg.cf.banking.example.controller.account.Banks", {
+		onInit: function onInit() {
+			var oJSONModel = new JSONModel();
+			this.getView().setModel(oJSONModel);
+			this._loadInfoData();
+		},
+		_loadInfoData: function _loadInfoData() {
+			this.getView().getModel().loadData("/apiFinTs/getBanks");
+		}
+	});
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRyb2xsZXIvYWNjb3VudC9CYW5rcy5jb250cm9sbGVyLmpzIl0sIm5hbWVzIjpbIm9uSW5pdCIsIm9KU09OTW9kZWwiLCJKU09OTW9kZWwiLCJnZXRWaWV3Iiwic2V0TW9kZWwiLCJfbG9hZEluZm9EYXRhIiwiZ2V0TW9kZWwiLCJsb2FkRGF0YSJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBS0NBLFEsb0JBQVE7QUFDUCxPQUFJQyxhQUFhLElBQUlDLFNBQUosRUFBakI7QUFDQSxRQUFLQyxPQUFMLEdBQWVDLFFBQWYsQ0FBd0JILFVBQXhCO0FBQ0EsUUFBS0ksYUFBTDtBQUNBLEc7QUFFREEsZSwyQkFBZTtBQUNkLFFBQUtGLE9BQUwsR0FBZUcsUUFBZixHQUEwQkMsUUFBMUIsQ0FBbUMsb0JBQW5DO0FBQ0EiLCJmaWxlIjoiY29udHJvbGxlci9hY2NvdW50L0JhbmtzLmNvbnRyb2xsZXIuanMiLCJzb3VyY2VSb290IjoiLi9zcmMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgSlNPTk1vZGVsIGZyb20gXCJzYXAvdWkvbW9kZWwvanNvbi9KU09OTW9kZWxcIjtcbmltcG9ydCBCYXNlQ29udHJvbGxlciBmcm9tIFwiY29tL3VuaW9yZy9jZi9iYW5raW5nL2V4YW1wbGUvY29udHJvbGxlci9CYXNlQ29udHJvbGxlclwiO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBCYW5rcyBleHRlbmRzIEJhc2VDb250cm9sbGVyIHtcblxuXHRvbkluaXQoKXtcblx0XHR2YXIgb0pTT05Nb2RlbCA9IG5ldyBKU09OTW9kZWwoKTtcblx0XHR0aGlzLmdldFZpZXcoKS5zZXRNb2RlbChvSlNPTk1vZGVsKTtcblx0XHR0aGlzLl9sb2FkSW5mb0RhdGEoKTtcblx0fVxuXG5cdF9sb2FkSW5mb0RhdGEoKXtcblx0XHR0aGlzLmdldFZpZXcoKS5nZXRNb2RlbCgpLmxvYWREYXRhKFwiL2FwaUZpblRzL2dldEJhbmtzXCIpO1xuXHR9XG59Il19

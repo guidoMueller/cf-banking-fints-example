@@ -1,0 +1,52 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:code="sap.ui.codeeditor"
+	controllerName="com.uniorg.cf.banking.example.controller.account.Banks">
+
+    <Page showHeader="false">
+        <content>
+	        <Table id="infoTable" items="{ path: '/' }">
+		        <headerToolbar>
+			        <Toolbar>
+				        <Title text="{i18n>banksTitle}"/>
+						<Title text="({=${/}.length})"/>
+			        </Toolbar>
+		        </headerToolbar>
+		        <columns>
+					<Column>
+						<Text text="{i18n>name}" />
+					</Column>
+			        <Column>
+				        <Text text="{i18n>blz}" />
+			        </Column>
+					<Column>
+						<Text text="{i18n>organisation}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>location}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>hbciVersion}" />
+					</Column>
+					<Column>
+						<Text text="{i18n>pinTanURL}" />
+					</Column>
+				</columns>
+		        <items>
+			        <ColumnListItem>
+				        <cells>
+                            <Text text="{name}"/>
+							<Text text="{blz}"/>
+							<Text text="{organisation}"/>
+							<Text text="{location}"/>
+							<Text text="{hbciVersion}"/>
+							<Text text="{pinTanURL}"/>
+				        </cells>
+			        </ColumnListItem>
+		        </items>
+	        </Table>
+        </content>
+    </Page>
+
+</mvc:View>
