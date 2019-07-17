@@ -1,0 +1,3 @@
+[submodule "nodejs-fints"]
+	path = nodejs-fints
+	url = git@github.com:guidoMueller/nodejs-fints.git

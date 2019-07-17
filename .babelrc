@@ -1,0 +1,8 @@
+{
+  sourceRoot: "./appSrc",
+  "presets": [
+    "env",
+    "react",
+    "es2015"
+  ]
+}
