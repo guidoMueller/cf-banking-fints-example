@@ -55,7 +55,7 @@
     "fints-institute-db": "^0.10.0",
     "js-base64": "^2.5.1",
     "memorystore": "^1.6.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-fints": "^0.3.5",
     "passport": "^0.4.0",
     "passport-custom": "^1.0.5",
